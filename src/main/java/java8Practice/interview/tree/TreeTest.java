@@ -44,11 +44,17 @@ public class TreeTest implements JavaExampleTest {
 		System.out.println("Preorder:");
 		sol.preorderTraversal(root, list);
 		list.forEach(a -> System.out.print(a+","));
+		System.out.println();
+		list = sol.preorderTraversal(root);
+		list.forEach(a -> System.out.print(a+","));
 		System.out.println("\n");
 		
 		System.out.println("Inorder:");
 		list = new ArrayList<Integer>();
 		sol.inorderTraveral(root, list);
+		list.forEach(a -> System.out.print(a+","));
+		System.out.println();
+		list = sol.inorderTraveral(root);
 		list.forEach(a -> System.out.print(a+","));
 		System.out.println("\n");
 		
@@ -57,6 +63,10 @@ public class TreeTest implements JavaExampleTest {
 		sol.postOrderTraversal(root, list);
 		list.forEach(a -> System.out.print(a+","));
 		System.out.println("\n");
+		
+		System.out.println("LevelOrder:");
+		sol.levelOrderTraversal(root);
+		
 		
 	
 		

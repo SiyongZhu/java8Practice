@@ -30,9 +30,9 @@ public class App {
 //		mre.run();
 //		se.run();
 //		basic.run();
-//		tree.run();
+		tree.run();
 //		sort.run();
-		search.run();
+//		search.run();
 		
 		
 		
