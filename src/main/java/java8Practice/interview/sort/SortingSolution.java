@@ -76,8 +76,6 @@ public class SortingSolution {
 	
 	//Cracking 10.1
 	public void sortedMerge(int[] a, int [] b, int lastA, int lastB) {
-		int i=lastA;
-		
 		int k=lastA+lastB+1;
 		
 		while (lastB>=0) {

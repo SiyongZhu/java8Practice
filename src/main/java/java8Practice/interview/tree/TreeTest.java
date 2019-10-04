@@ -67,6 +67,16 @@ public class TreeTest implements JavaExampleTest {
 		System.out.println("LevelOrder:");
 		sol.levelOrderTraversal(root);
 		
+		System.out.println("Min Height:"+sol.findMinHeight(root, 0));
+		System.out.println("Max Height:" + sol.findMaxHeight(root, 0));
+		
+		TreeNode node200 = new TreeNode(200);
+		TreeNode node199 = new TreeNode(199);
+		TreeNode node201 = new TreeNode(201);
+		node200.addLeft(node201);
+		node200.addRight(node199);
+		
+		System.out.println("Is Tree BST? "+sol.isBST(node200));
 		
 	
 		

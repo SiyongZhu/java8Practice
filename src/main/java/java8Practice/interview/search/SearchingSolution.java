@@ -37,6 +37,22 @@ public class SearchingSolution {
 		}		
 	}
 	
+	//Cracking 10.9 -- native solution
+	public boolean findValueinSortedMatrix(int[][] matrix, int key) {
+		int row = 0;
+		int col = matrix[0].length;
+		while (row<matrix.length && col > 0) {
+			if(matrix[row][col]==key) {return true;}
+			if(matrix[row][col]>key) {
+				col--;
+			}else {
+				row++;
+			}
+		}
+		return false;
+		
+	}
+	
 	//Cracking 10.5
 //	public int binarySearchSparse(String[] stringList, String key, int start, int end) {
 //

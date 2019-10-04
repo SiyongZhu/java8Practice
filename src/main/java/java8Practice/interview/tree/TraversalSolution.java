@@ -70,6 +70,7 @@ public class TraversalSolution {
 		}
 	}
 	
+	//Cracking 4.2
 	public void levelOrderTraversal(TreeNode root) {
 		Queue<TreeNode> q = new LinkedList<>();
 		
@@ -92,4 +93,82 @@ public class TraversalSolution {
 			height++;
 		}
 	}
+	
+	public int findMinHeight(TreeNode node, int height) {
+		if(node == null) { return height; }
+		if(node.right==null && node.left==null) {
+			return height+1;
+		}
+		else {
+			return Math.min(findMinHeight(node.left, height+1), findMinHeight(node.right, height+1));
+		}
+	}
+	
+	public int findMaxHeight(TreeNode node, int height) {
+		if (node == null) { return height; }
+		else {
+			return Math.max(findMaxHeight(node.left, height+1), findMaxHeight(node.right, height+1));
+		}
+	}
+	
+	//Cracking 4.4
+	public int getHeight(TreeNode node) {
+		if (node == null) {return 0;}
+		else {
+			return Math.max(getHeight(node.left), getHeight(node.right))+1;
+		}
+	}
+	
+	public boolean isbalanced(TreeNode node) {
+		if (node == null) {
+			return true;
+		}else {
+			return (isbalanced(node.left) &&
+					isbalanced(node.right) &&
+					Math.abs(getHeight(node.left)-getHeight(node.right))<=1);
+		}
+	}
+	
+	//Cracking 4.5
+	static Integer last_value;
+	public boolean isBST(TreeNode node) {
+		if (node == null) {
+			return true;
+		}
+		if(!isBST(node.left)) {return false;}
+		if(last_value != null && node.val<last_value) {
+			return false;
+		}else {
+			last_value = node.val;
+		}
+		if(!isBST(node.right)) {return false;}
+		return true;
+		
+	}
+	
+	//Cracking 4.6
+	public TreeNode nextSuccessor(TreeNode node) {
+		TreeNode curr;
+		TreeNode parent;
+		if (node.right != null) { //if right sub tree is not empty
+			curr = node.right;
+			while(curr.left != null) {
+				curr = curr.left;
+			}
+			return curr;
+		}
+		else {
+			//iterate up until curr is a left subtree
+			curr = node;
+			parent = node.parent;
+			while(parent.left != curr && parent!=null) {
+				curr = parent;
+				parent = parent.parent;
+			}
+			return parent;
+		}
+
+	}
+	
+	
 }
