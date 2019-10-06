@@ -167,7 +167,31 @@ public class TraversalSolution {
 			}
 			return parent;
 		}
-
+	}
+	
+	//Cracking 4.10
+	private boolean isTreeIdentical(TreeNode tree1, TreeNode tree2) {
+		if(tree1 == null && tree2 == null) {
+			return true;
+		}
+		if(tree1 == null || tree2 == null) {
+			return false;
+		}
+		
+		if(tree1.val == tree2.val) {
+			return(isTreeIdentical(tree1.left, tree2.left) && isTreeIdentical(tree1.right, tree2.right));
+		}else {
+			return false;
+		}
+	}
+	public boolean isSubTree (TreeNode tree1, TreeNode tree2) {
+		if(isTreeIdentical(tree1, tree2)) {
+			return true;
+		}else if (tree1==null) {
+			return false;
+		}else {
+			return(isSubTree(tree1.left, tree2)) || isSubTree(tree1.right, tree2);
+		}
 	}
 	
 	

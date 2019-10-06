@@ -16,6 +16,11 @@ public class SearchTest implements JavaExampleTest {
 		
 		key = 10;
 		System.out.println(String.format("RecursiveBinarysearch for %d is %d ", key, ss.recursiveBinarySearch(search, key, 0, search.length-1)));
+	
+		int[] rotate = {6,7,8,9,1,2,3,4,5};
+		key = 7;
+		System.out.println(String.format("Rotated Binary Search for %d is %d", key, ss.binarySearchRotated(rotate, key)));
+	
 	}
 
 }
