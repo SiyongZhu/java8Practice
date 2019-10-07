@@ -90,7 +90,7 @@ public class SearchingSolution {
 	}
 	
 	// 10.3 
-	public int search(int[] arr, int key) {
+	public int rotatedSearch(int[] arr, int key) {
 	    int left = 0;
 	    int right= arr.length-1;
 	 

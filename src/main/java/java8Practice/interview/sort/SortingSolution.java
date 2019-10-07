@@ -54,7 +54,7 @@ public class SortingSolution {
 		int helperRight = helperMid+1;
 		int helperEnd = end-start;
 		
-		int current = 0;
+		int current = start;
 
 		while(helperLeft<=helperMid && helperRight<=helperEnd)
 		{
@@ -65,8 +65,8 @@ public class SortingSolution {
 				arr[current] = copy[helperLeft];
 				helperLeft++;
 			}
+			current++;
 		}
-		current++;
 		
 		int remaining = helperMid - helperLeft;
 		for (int i=0; i<=remaining; i++) {

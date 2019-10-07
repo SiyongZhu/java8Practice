@@ -16,7 +16,7 @@ public class SortTest  implements JavaExampleTest {
 		ss.quickSort(array1, 0, array1.length-1);
 		System.out.println(Arrays.toString(array1));
 		
-		int[] array2 = {3,1,2,4};
+		int[] array2 = {3,1,4,2,0};
 		ss.mergeSort(array2, 0, array2.length-1);
 		System.out.println(Arrays.toString(array2));
 		
