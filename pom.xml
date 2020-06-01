@@ -6,9 +6,90 @@
   <name>java8Practice</name>
   
   <properties>
-    <java.version>1.8</java.version>
-    <maven.compiler.source>1.8</maven.compiler.source>
-    <maven.compiler.target>1.8</maven.compiler.target>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		
+		<java.version>1.8</java.version>
+    	<maven.compiler.source>1.8</maven.compiler.source>
+    	<maven.compiler.target>1.8</maven.compiler.target>
+	
+	    <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
+	    <maven-shade-plugin.version>2.4.3</maven-shade-plugin.version>
+	    <maven-surefire-plugin.version>2.22.2</maven-surefire-plugin.version>
+	    <exec-maven-plugin.version>1.8.0</exec-maven-plugin.version>
+	
+	    <vertx.version>3.9.1</vertx.version>
+	    <junit-jupiter.version>5.4.0</junit-jupiter.version>
+	    
+	    <main.verticle>java8Practice.guidetovertx.MainVerticle</main.verticle>
   </properties>
+  
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>io.vertx</groupId>
+        <artifactId>vertx-stack-depchain</artifactId>
+        <version>${vertx.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+  
+  <dependencies>
+        <!--Spark Cassandra Connector-->
+        <dependency>
+            <groupId>com.datastax.spark</groupId>
+            <artifactId>spark-cassandra-connector_2.10</artifactId>
+            <version>1.0.0-rc4</version>
+        </dependency>
+        <dependency>
+            <groupId>com.datastax.spark</groupId>
+            <artifactId>spark-cassandra-connector-java_2.10</artifactId>
+            <version>1.0.0-rc4</version>
+        </dependency>
+        
+        <!-- Vert.x dependency -->
+		<dependency>
+		    <groupId>io.vertx</groupId>
+		    <artifactId>vertx-core</artifactId>
+		</dependency>
+		<dependency>
+		    <groupId>io.vertx</groupId>
+		    <artifactId>vertx-web</artifactId>
+		</dependency>
+		<dependency>
+   			<groupId>io.vertx</groupId>
+   			<artifactId>vertx-rx-java</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>io.vertx</groupId>
+			<artifactId>vertx-web-templ-freemarker</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>io.vertx</groupId>
+			<artifactId>vertx-jdbc-client</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.hsqldb</groupId>
+			<artifactId>hsqldb</artifactId>
+			<version>2.3.4</version>
+		</dependency>
+        <!--Spark-->
+        <dependency>
+            <groupId>org.apache.spark</groupId>
+            <artifactId>spark-core_2.10</artifactId>
+            <version>0.9.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.spark</groupId>
+            <artifactId>spark-streaming_2.10</artifactId>
+            <version>0.9.2</version>
+        </dependency>
+        <dependency>
+		    <groupId>com.github.javafaker</groupId>
+		    <artifactId>javafaker</artifactId>
+		    <version>1.0.2</version>
+		</dependency>
+    </dependencies>
 
 </project>
