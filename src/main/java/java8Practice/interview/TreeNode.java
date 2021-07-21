@@ -21,5 +21,9 @@ public class TreeNode {
 		this.right = right;
 	}
 	
+	public void addParent(TreeNode parent) {
+		this.parent = parent;
+	}
+	
 	
 }
