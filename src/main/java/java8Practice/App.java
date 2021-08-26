@@ -8,11 +8,7 @@ import java.util.Objects;
 import java.util.Optional;
 import java.util.Random;
 
-import org.joda.time.DateTime;
-import org.joda.time.format.DateTimeFormat;
-import org.joda.time.format.DateTimeFormatter;
 
-import io.vertx.core.json.JsonObject;
 import java8Practice.interview.BasicTest;
 import java8Practice.interview.search.SearchTest;
 import java8Practice.interview.sort.SortTest;
@@ -85,19 +81,6 @@ public class App {
                 .map(list -> list.get(0)).orElse(null);
         System.out.println( "Map might contain ampty list: " + result );
         
-        JsonObject json = new JsonObject();
-        json.put("1", new JsonObject().put("2", new JsonObject().put("3", objs)) );
-        
-        JsonObject json2 = null;
-        
-        System.out.println("-------Nest Optional Test");
-        
-        System.out.println(
-                Optional.ofNullable(json).flatMap(a-> Optional.ofNullable(a.getJsonObject("1")))
-                .flatMap(a-> Optional.ofNullable(a.getJsonObject("4")))
-                .flatMap(a-> Optional.ofNullable(a.getJsonArray("3")))
-                .filter(a ->a.size()>0).isPresent()
-        );
         
         String errorMsg = "Access Denied (Service: Amazon S3; Status Code: 403; Error Code: AccessDenied; Request ID: 0DB30E072412F296)";
         System.out.println(errorMsg.indexOf("Status Code:"));
