@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java8Practice.JavaExampleTest;
 import java8Practice.interview.TreeNode;
 
-public class TreeTest implements JavaExampleTest {
+public class TreeTraveralTest implements JavaExampleTest {
 
 //	            16
 //			 /      \
